@@ -18,7 +18,15 @@ const Card = ({ icon, category, quantity }) => {
         }
       />
       <div>
-        <p className="quantity">{quantity}</p>
+        <p className="quantity">
+          {category === "Calories"
+            ? `${quantity}kCal`
+            : category === "Protéines"
+            ? `${quantity}g`
+            : category === "Glucides"
+            ? `${quantity}g`
+            : `${quantity}g`}
+        </p>
         <p className="category">{category}</p>
       </div>
     </div>
