@@ -2,17 +2,24 @@ import { useEffect, useState } from "react";
 import Header from "@/components/header/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Card from "@/components/card/Card";
+import Activity from "@/components/activity/Activity";
 
-import { userMainData } from "./_services/data.service";
+import { userMainData } from "./_services/user.service";
+import { userActivity } from "./_services/activity.service";
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState([]);
+  const [activity, setActivity] = useState([]);
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     userMainData.getUserMainData(12).then((res) => {
       setUser(res.data.data);
+      setLoader(true);
+    });
+    userActivity.getUserActivity(12).then((res) => {
+      setActivity(res.data.data);
       setLoader(true);
     });
     // eslint-disable-next-line
@@ -37,7 +44,7 @@ function App() {
           <div className="content">
             <section className="graphs">
               <article>
-                <div className="barchart"></div>
+                <Activity data={activity}></Activity>
                 <div className="charts">
                   <div className="little-charts"></div>
                   <div className="little-charts"></div>
