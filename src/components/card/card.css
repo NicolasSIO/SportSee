@@ -1,0 +1,43 @@
+.Card {
+  height: 124px;
+  width: 258px;
+  display: flex;
+  background-color: #fbfbfb;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone {
+  height: 60px;
+  width: 60px;
+  padding: 20px;
+  margin-right: 24px;
+}
+
+.calories {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.proteines {
+  background-color: rgba(74, 184, 255, 0.1);
+}
+
+.glucides {
+  background-color: rgba(249, 206, 35, 0.1);
+}
+
+.lipides {
+  background-color: rgba(253, 81, 129, 0.1);
+}
+
+.quantity {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.category {
+  color: #74798c;
+  font-size: 14px;
+  line-height: 24px;
+}
