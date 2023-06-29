@@ -1,0 +1,22 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  margin: 169px 0 159px 0;
+}
+
+.error-404 {
+  font-weight: 700;
+  font-size: 288px;
+}
+
+.error-text {
+  font-weight: 500;
+  font-size: 36px;
+  margin: 66px 0 182px 0;
+}
+
+.error-link {
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration-line: underline;
+}
