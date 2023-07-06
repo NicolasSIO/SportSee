@@ -13,7 +13,6 @@ import {
 import "./activity.css";
 
 const Activity = ({ data }) => {
-  console.log(data.sessions);
   return (
     <div className="Activity">
       <ResponsiveContainer width="100%" height="100%">
@@ -30,7 +29,7 @@ const Activity = ({ data }) => {
         >
           <CartesianGrid strokeDasharray="1 2" />
           <XAxis />
-          <YAxis />
+          <YAxis orientation="right" />
           <Tooltip />
           <Legend />
           <Bar dataKey="kilogram" fill="#E60000" barSize={15} />
