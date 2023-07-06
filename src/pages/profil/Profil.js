@@ -7,7 +7,7 @@ import Activity from "@/components/activity/Activity";
 import Session from "@/components/session/Session";
 import Performance from "@/components/performance/Performance";
 import Score from "@/components/score/Score";
-import ErrorApi from "@/pages/error/Error";
+import ErrorApi from "@/pages/error/ErrorApi";
 
 import { total } from "../../_services/format";
 
