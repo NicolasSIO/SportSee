@@ -260,9 +260,38 @@ const USER_PERFORMANCE = [
   },
 ];
 
-module.exports = {
-  USER_MAIN_DATA,
-  USER_ACTIVITY,
-  USER_AVERAGE_SESSIONS,
-  USER_PERFORMANCE,
+export const getUserMainData = async (id) => {
+  try {
+    const res = USER_MAIN_DATA.find((user) => user.id === id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getUserActivity = async (id) => {
+  try {
+    const res = USER_ACTIVITY.find((user) => user.userId === id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getUserSession = async (id) => {
+  try {
+    const res = USER_AVERAGE_SESSIONS.find((user) => user.userId === id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getUserPerformance = async (id) => {
+  try {
+    const res = USER_PERFORMANCE.find((user) => user.userId === id);
+    return { data: res };
+  } catch (e) {
+    console.log(e);
+  }
 };

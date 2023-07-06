@@ -8,7 +8,6 @@ const Score = ({ data }) => {
     { value: data.todayScore || data.score },
     { value: 1 - data.todayScore || data.score },
   ];
-  console.log(score);
   return (
     <div className="Score">
       <h2 className="score-title">Score</h2>

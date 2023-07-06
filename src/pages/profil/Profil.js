@@ -7,11 +7,9 @@ import Activity from "@/components/activity/Activity";
 import Session from "@/components/session/Session";
 import Performance from "@/components/performance/Performance";
 import Score from "@/components/score/Score";
+import ErrorApi from "@/pages/error/Error";
 
-import { userMainData } from "@/_services/user.service";
-import { userActivity } from "@/_services/activity.service";
-import { userSession } from "@/_services/session.service";
-import { userPerformance } from "@/_services/performance.service";
+import { total } from "../../_services/format";
 
 import "./profil.css";
 
@@ -22,29 +20,31 @@ const Profil = () => {
   const [session, setSession] = useState([]);
   const [performance, setPerformance] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    userMainData.getUserMainData(id).then((res) => {
-      setUser(res.data.data);
-      setLoader(true);
-    });
-    userActivity.getUserActivity(id).then((res) => {
-      setActivity(res.data.data);
-      setLoader(true);
-    });
-    userSession.getUserSession(id).then((res) => {
-      setSession(res.data.data);
-      setLoader(true);
-    });
-    userPerformance.getUserPerformance(id).then((res) => {
-      setPerformance(res.data.data);
-      setLoader(true);
+    total(parseInt(id)).then((data) => {
+      console.log("data: ", data);
+      if (data.user !== null) {
+        setUser(data.user.data);
+        setActivity(data.activity.data);
+        setPerformance(data.performance.data);
+        setSession(data.session.data);
+        setLoader(true);
+      } else {
+        setLoader(true);
+        setError(true);
+      }
     });
     // eslint-disable-next-line
   }, []);
 
   if (!loader) {
     return <div>Loading ...... </div>;
+  }
+
+  if (error) {
+    return <ErrorApi />;
   }
 
   return (
