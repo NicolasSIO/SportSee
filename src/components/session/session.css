@@ -1,3 +1,20 @@
 .Session {
   background-color: red;
+  width: 258px;
+  height: 263px;
+  position: relative;
+}
+
+.session-duration {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0.5039569735527039;
+  position: absolute;
+  top: 29px;
+  left: 34px;
+}
+
+.session-duration > span {
+  display: block;
 }
