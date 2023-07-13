@@ -6,15 +6,25 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
 import "./activity.css";
+import ActivityTooltip from "./ActivityTooltip";
 
 const Activity = ({ data }) => {
   return (
     <div className="Activity">
+      <div className="legend">
+        <div>
+          <img src="/assets/icons/blackDot.svg" alt="Couleur poids" />
+          <p className="description">Poids (kg)</p>
+        </div>
+        <div>
+          <img src="/assets/icons/redDot.svg" alt="Couleur calories" />
+          <p className="description">Calories brûlées (kCal)</p>
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
@@ -27,11 +37,10 @@ const Activity = ({ data }) => {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="1 2" />
-          <XAxis />
-          <YAxis orientation="right" />
-          <Tooltip />
-          <Legend />
+          <CartesianGrid vertical={false} strokeDasharray="1 1" />
+          <XAxis tickLine={false} stroke="1 1" />
+          <YAxis orientation="right" axisLine={false} tickLine={false} />
+          <Tooltip content={<ActivityTooltip />} />
           <Bar dataKey="kilogram" fill="#E60000" barSize={15} />
           <Bar dataKey="calories" fill="#282D30" barSize={15} />
         </BarChart>

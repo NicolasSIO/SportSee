@@ -24,7 +24,6 @@ const Profil = () => {
 
   useEffect(() => {
     total(parseInt(id)).then((data) => {
-      console.log("data: ", data);
       if (data.user !== null) {
         setUser(data.user.data);
         setActivity(data.activity.data);

@@ -260,6 +260,7 @@ const USER_PERFORMANCE = [
   },
 ];
 
+// Récupère les données de l'utilisateur selon son id
 export const getUserMainData = async (id) => {
   try {
     const res = USER_MAIN_DATA.find((user) => user.id === id);
@@ -269,6 +270,7 @@ export const getUserMainData = async (id) => {
   }
 };
 
+// Récupère les données des activités de l'utilisateur selon son id
 export const getUserActivity = async (id) => {
   try {
     const res = USER_ACTIVITY.find((user) => user.userId === id);
@@ -278,6 +280,7 @@ export const getUserActivity = async (id) => {
   }
 };
 
+// Récupère les données des sessions moyennes de l'utilisateur selon son id
 export const getUserSession = async (id) => {
   try {
     const res = USER_AVERAGE_SESSIONS.find((user) => user.userId === id);
@@ -287,6 +290,7 @@ export const getUserSession = async (id) => {
   }
 };
 
+// Récupère les données des performances de l'utilisateur selon son id
 export const getUserPerformance = async (id) => {
   try {
     const res = USER_PERFORMANCE.find((user) => user.userId === id);
